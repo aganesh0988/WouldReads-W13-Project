@@ -17,14 +17,15 @@ Discussion of technologies used
     Express
     PUG
     Sequelize (Postgres)
-    CSS
+    CSS (bootstrap? something else?)
 Discussion of two features that show off the team's technical abilities
 Discussion of both challenges faced and the way the team solved them
 Code snippets to highlight the best code
 
 
 name ideas
-mediocreReads
-DecentReads
-SatisfactoryReads
-wouldReads (In a time before Netflix)
+    mediocreReads
+    DecentReads
+    SatisfactoryReads
+    wouldReads (In a time before Netflix)
+    netReads

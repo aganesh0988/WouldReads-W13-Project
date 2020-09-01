@@ -4,30 +4,8 @@ Models needed
         password?
         friends?
 
-    books
-        cover
-        title
-        author table reference
-        rating
-        date published
-        summary
-        genre table reference
 
-    Genre
-        genrename
 
-    bookshelf
-        shelf-name
-        3 default (want to read, reading, read)
-
-    authors
-        born
-        died
-        books written
-        biography
-        genres
-        websites?
-        influences?
 
     users/books
         user reference
