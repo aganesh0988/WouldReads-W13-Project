@@ -1,7 +1,7 @@
 As a user I would like to put books on bookshelves so that I can keep track of them.
 
 Models needed
-    bookshelf
+    Bookshelves
         shelf-name
         3 default (want to read, reading, read)
 
