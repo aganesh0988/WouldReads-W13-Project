@@ -4,9 +4,6 @@ Models needed
         password?
         friends?
 
-
-
-
     users/books
         user reference
         book reference

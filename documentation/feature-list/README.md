@@ -1,13 +1,18 @@
-# w13-project
+# Goodreads Clone
 
-Goodreads
-    Login / Create User
+# Features
+    Login/Logout
+    Create User
     Books
     Bookshelves
     Reviews
     Read Status (will read, have read, etc.)
     Bonus: Search across multiple models
     Bonus: Tags
+
+Features - MVP
+------------
+
 
 A production README file for your GitHub repository containing
 Brief explanation of what the app is and does
