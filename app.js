@@ -12,6 +12,8 @@ app.use(express.json())
 app.use(cors({}));
 app.set('view engine', 'pug')
 
+app.use('./images', express.static('images'))
+
 // app.use("/", indexRouter)
 app.use("/users", userBookshelf)
 

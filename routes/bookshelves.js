@@ -7,27 +7,29 @@ const user = require('../db/models/user');
 const router = express.Router();
 
 router.get("/:id/bookshelves", asyncHandler ( async (req, res) =>{
-    const userBookshelves = await userBook.findAll({
+    const userBooks = await userBook.findAll({
         where: {userId: req.params.id},
         include: [Book, Bookshelf]
     })
 
-    // let shelves = userBookshelves.filter(shelf => {
+    // let shelves = userBooks.filter(shelf => {
     //     if(!shelves.includes(shelf.Bookshelf.shelfName)) {
     //         return shelf.Bookshelf.shelfName
     //     }
     // })
 
-    // let shelves = userBookshelves.reduce(shelvesObj, book => {
-    //     if(!Object.keys(shelvesObj).includes(book.Bookshelf.shelfName)) {
-    //         shelvesObj[book.Bookshelf.shelfName] = [];
-    //     }
-    //     shelvesObj[book.Bookshelf.shelfName].push(book);
-    //     return shelvesObj;
-    // }, {})
+    let shelves = userBooks.reduce((shelvesObj, book) => {
+        if(!Object.keys(shelvesObj).includes(book.Bookshelf.shelfName)) {
+            shelvesObj[book.Bookshelf.shelfName] = [];
+        }
+        shelvesObj[book.Bookshelf.shelfName].push(book);
+        return shelvesObj;
+    }, {})
+
+    console.log('Shelves: ', shelves)
 
     // console.log("this is my consolelog", shelves)
-    res.render('user-bookshelves', {userBookshelves})
+    res.render('user-bookshelves', {shelves})
 }));
 
 router.post("/:id/bookshelves", asyncHandler(async(req, res) => {
