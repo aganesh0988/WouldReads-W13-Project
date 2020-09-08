@@ -3,13 +3,14 @@ const cors = require('cors')
 const morgan = require("morgan");
 const { environment } = require('./config');
 const app = express();
-//const indexRouter = require("./routes/index")
+// const indexRouter = require("./routes/index")
 const pagesRouter = require('./routes/pages')
-app.set('view engine', 'pug');
+const userBookshelf = require("./routes/bookshelves")
 
 app.use(morgan("dev"));
 app.use(express.json())
 app.use(cors({}));
+app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
   res.send('hello')
