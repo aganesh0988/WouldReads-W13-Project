@@ -17,7 +17,7 @@ module.exports = {
         allowNull: false
       },
       published: {
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
         allowNull: false
       },
       summary: {

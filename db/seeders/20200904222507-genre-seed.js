@@ -26,7 +26,10 @@ module.exports = {
       { genreName: "Self Help", createdAt: new Date(), updatedAt: new Date()},
       { genreName: "Poetry", createdAt: new Date(), updatedAt: new Date()},
       { genreName: "Romance", createdAt: new Date(), updatedAt: new Date()},
-      { genreName: "Memoir", createdAt: new Date(), updatedAt: new Date()}
+      { genreName: "Memoir", createdAt: new Date(), updatedAt: new Date()},
+      { genreName: "Nonfiction", createdAt: new Date(), updatedAt: new Date()},
+      { genreName: "Humor", createdAt: new Date(), updatedAt: new Date()},
+      { genreName: "Philosophy", createdAt: new Date(), updatedAt: new Date()},
     ])
   },
 
