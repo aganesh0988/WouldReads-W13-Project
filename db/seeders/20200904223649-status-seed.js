@@ -6,6 +6,7 @@ module.exports = {
       {statusName: "Want to Read", createdAt: new Date(), updatedAt: new Date()},
       {statusName: "Reading", createdAt: new Date(), updatedAt: new Date()},
       {statusName: "Read", createdAt: new Date(), updatedAt: new Date()},
+      {statusName: "None", createdAt: new Date(), updatedAt: new Date()},
     ])
   },
 

@@ -8,6 +8,7 @@ module.exports = {
       {shelfName: "Classics", createdAt: new Date(), updatedAt: new Date()},
       {shelfName: "Self Help Books", createdAt: new Date(), updatedAt: new Date()},
       {shelfName: "Favorite Novels", createdAt: new Date(), updatedAt: new Date()},
+      {shelfName: "None", createdAt: new Date(), updatedAt: new Date()},
     ])
   },
 

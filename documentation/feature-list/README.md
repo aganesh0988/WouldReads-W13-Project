@@ -100,7 +100,7 @@ https://app.quickdatabasediagrams.com/#/d/UDzJ5J
         shelf-name
         3 default (want to read, reading, read)
 
-# Paths
+# Paths / Endpoints
 front-end index.js
     "/"
         // action: get
@@ -131,12 +131,12 @@ front-end index.js
         // notes: displays books reviews
         // notes: include button that links to "/books/:id/review"
 
-    "/books/:id/review"
+    "/books/:id/reviews"
         // action: get
         // page: render "review-form.pug"
         // notes: form that allows for user to input rating (integer) and review (text)
 
-    "/books/:id/review"
+    "/books/:id/reviews"
         // action: post
         // page: render "/books/:id(\\d++)"
         // notes: creates review in DB and redirects to that book's info page
@@ -145,9 +145,16 @@ front-end index.js
         // action: get
         // page: render "bookshelves.pug"
         // notes: display users book shelves by bookshelf. Books are displayed by cover within bookshelf (netflix style). At the end of each row, an x / button to delete row (bookshelf)
-        // notes: above bookshelf rows page title "my books" and + / button "Create new bookshelf"
+        // notes: above bookshelf rows page title "my books" and + / button "Create new bookshelf" (create bookshelf form that is hidden by default and is shown when you press "+")
         // notes: on hover over book cover, display title, author, rating, genre, first 50 char of summary, button w/ drop down to add to bookshelf
         // notes: on click of book cover redirect to "/books/:id(\\d++)"
+        // notes: has a form to create a new bookshelf
+
+    "/users/:id/bookshelves"
+        // action: post
+        // page: after submit will add the bookshelf to "/users/:id/bookshelves" via ajax
+        // notes: create a new bookshelf and add via ajax
+
 
 <!-- Guide from Project Requirements -->
 A production README file for your GitHub repository containing
