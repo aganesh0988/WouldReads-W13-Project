@@ -1,0 +1,16 @@
+extends layout.pug
+block head
+
+block content
+  form
+    div
+      input(type="hidden" name='_csrf' value=token);
+    div
+      label ENTER USERNAME
+      br
+      input(type="text" name='username' placeholder='USERNAME')
+    div
+      label ENTER PASSWORD
+      input(type="text" name='password' placeholder='PASSWORD')
+
+

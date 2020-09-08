@@ -7,8 +7,8 @@ module.exports = (sequelize, DataTypes) => {
     summary: DataTypes.TEXT
   }, {});
   Book.associate = function(models) {
-    Book.hasMany(models.Genre, {
-      through: bookGenre,
+    Book.belongsToMany(models.Genre, {
+      through: 'bookGenre',
       foreignKey: 'bookId',
       otherKey: 'genreId'
     })
