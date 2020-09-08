@@ -3,6 +3,9 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Statuses', [
+      {statusName: "Want to Read", createdAt: new Date(), updatedAt: new Date()},
+      {statusName: "Reading", createdAt: new Date(), updatedAt: new Date()},
+      {statusName: "Read", createdAt: new Date(), updatedAt: new Date()},
     ])
   },
 
