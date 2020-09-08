@@ -3,15 +3,17 @@ const cors = require('cors')
 const morgan = require("morgan");
 const { environment } = require('./config');
 const app = express();
-const indexRouter = require("./routes/index")
+// const indexRouter = require("./routes/index")
 const pagesRouter = require('./routes/pages')
-
+const userBookshelf = require("./routes/bookshelves")
 
 app.use(morgan("dev"));
 app.use(express.json())
 app.use(cors({}));
+app.set('view engine', 'pug')
 
-app.use("/", indexRouter)
+// app.use("/", indexRouter)
+app.use("/users", userBookshelf)
 
 // Catch unhandled requests and forward to error handler.
 app.use((req, res, next) => {
