@@ -4,8 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     authorPic: DataTypes.STRING,
-    born: DataTypes.DATE,
-    died: DataTypes.DATE,
+    born: DataTypes.STRING,
+    died: DataTypes.STRING,
     biography: DataTypes.TEXT,
     website: DataTypes.STRING
   }, {});

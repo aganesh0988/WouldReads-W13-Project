@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       dateRead: {
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
         allowNull: false
       },
       bookId: {
