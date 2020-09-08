@@ -30,6 +30,8 @@ module.exports = {
       { genreName: "Nonfiction", createdAt: new Date(), updatedAt: new Date()},
       { genreName: "Humor", createdAt: new Date(), updatedAt: new Date()},
       { genreName: "Philosophy", createdAt: new Date(), updatedAt: new Date()},
+      { genreName: "Race", createdAt: new Date(), updatedAt: new Date()},
+      { genreName: "Historical Fiction", createdAt: new Date(), updatedAt: new Date()},
     ])
   },
 
