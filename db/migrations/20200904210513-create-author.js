@@ -21,11 +21,11 @@ module.exports = {
         allowNull: false
       },
       born: {
-        type: STRING,
+        type: Sequelize.STRING,
         allowNull: false
       },
       died: {
-        type: STRING
+        type: Sequelize.STRING
       },
       biography: {
         type: Sequelize.TEXT,

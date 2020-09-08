@@ -2,9 +2,8 @@ extends layout.pug
 block head
 
 block content
-  form(action="/login" method="get")
-    div
-      input(type="hidden" name='_csrf' value=token);
+  form(action="/login" method="post")
+    input(type="hidden" name='_csrf' value=token);
     div
       label ENTER USERNAME
       br
@@ -12,7 +11,7 @@ block content
     div
       label ENTER PASSWORD
       br
-      input(type="text" name='password' placeholder='PASSWORD')
+      input(type="password" name='password' placeholder='PASSWORD')
       hr
     div
       button(type="submit") SUBMIT
