@@ -11,8 +11,8 @@
 # Features - MVP
 --------------
 [ ] Homepage that has log-in / sign-up options / displays books
-[ ] Sign up page where users submit their first name, last name, username, password.
-[ ] Log-in page where users provide their email and password to log into the site
+[ ] Sign up form where users submit their first name, last name, username, password.
+[ ] Log-in form where users provide their email and password to log into the site
 [ ] A Page to view a database of all available books displayed as covers (netflix style). Each cover is clickable for more info.
 [ ] A Page for info about individual book that displays cover, title, author, avg rating, summary, genres
 [ ] A user homepage that displays a table with the following columns
@@ -26,6 +26,7 @@
     [ ] date read - display date user read and allows user to change date
 [ ] A page to create bookShelves
 [ ] A page to view books on specific bookshelf
+[x] Seeder Files
 
 Future Features
 -------------------
