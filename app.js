@@ -5,18 +5,20 @@ const { environment } = require('./config');
 const app = express();
 // const indexRouter = require("./routes/index")
 const pagesRouter = require('./routes/pages')
-const userBookshelf = require("./routes/bookshelves")
+const bookshelf = require('./routes/bookshelves')
+const userBookshelf = require("./routes/userBookshelves")
 
 app.use(morgan("dev"));
 app.use(express.json())
+app.use(express.urlencoded({extended:false}))
 app.use(cors({}));
 app.set('view engine', 'pug')
-//latest code was pushed to git if youre interested in it. Nice, thanks Ill pull it
-// app.use('./images', express.static('images'))
+
 
 // app.use("/", indexRouter)
 app.use('/public', express.static('public'));
-app.use("/users", userBookshelf)
+app.use("/users", userBookshelf);
+app.use("/bookshelves", bookshelf);
 
 // Catch unhandled requests and forward to error handler.
 app.use((req, res, next) => {

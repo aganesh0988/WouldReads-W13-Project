@@ -11,7 +11,13 @@ module.exports = (sequelize, DataTypes) => {
       through: 'bookGenre',
       foreignKey: 'bookId',
       otherKey: 'genreId'
-    })
+    });
+    Book.belongsToMany(models.Author, {
+      through: 'authorBook',
+      foreignKey: 'bookId',
+      otherKey: 'authorId'
+    });
+    Book.hasMany(models.Review, {foreignKey: 'bookId'})
   };
   return Book;
 };

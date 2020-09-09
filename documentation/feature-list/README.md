@@ -15,21 +15,22 @@
 [ ] Log-in form where users provide their email and password to log into the site
 [ ] A Page to view a database of all available books displayed as covers (netflix style). Each cover is clickable for more info.
 [ ] A Page for info about individual book that displays cover, title, author, avg rating, summary, genres
-[ ] A user homepage that displays a table with the following columns
-    [ ] cover - displays photo of cover
-    [ ] title - displays title
-    [ ] author - display as link to click for author info
-    [ ] avg rating - displays average rating of given book
-    [ ] rating (user rating) - if there is a rating displays # otherwise lets user click to write review
-    [ ] shelves - lists shelves the book is on
-    [ ] read status - displays read status and allows user to change it
-    [ ] date read - display date user read and allows user to change date
-[ ] A page to create bookShelves
-[ ] A page to view books on specific bookshelf
+[ ] A user homepage that displays books by cover.
+    [ ] On Hover shows the following info
+        [ ] cover - displays photo of cover
+        [ ] title - displays title
+        [ ] author - display as link to click for author info
+        [ ] avg rating - displays average rating of given book
+        [ ] rating (user rating) - if there is a rating displays # otherwise lets user click to write review
+        [ ] shelves - lists shelves the book is on
+        [ ] read status - displays read status and allows user to change it
+        [ ] date read - display date user read and allows user to change date
+[x] A form to create bookShelves
 [x] Seeder Files
 
 Future Features
 -------------------
+[ ] A page to view books on specific bookshelf
 [ ] allow user to click cover or title for more info on book
 [ ] toggle between cover & detailed view for books
 [ ] Create a book
@@ -156,6 +157,10 @@ front-end index.js
         // page: after submit will add the bookshelf to "/users/:id/bookshelves" via ajax
         // notes: create a new bookshelf and add via ajax
 
+    "/users/:id/books/:id/status"
+        // action: post
+        // page: after submit will add the bookshelf to "/users/:id/bookshelves" via ajax
+        // notes: create a new bookshelf and add via ajax
 
 <!-- Guide from Project Requirements -->
 A production README file for your GitHub repository containing
