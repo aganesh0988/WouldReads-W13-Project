@@ -1,0 +1,29 @@
+form(method="post" action="/signup")
+    div
+        input(type="hidden" name='_csrf' value=token)
+    div
+        label First Name
+        br
+        input(type="text" name='firstName' placeholder='First Name')
+    div
+        label Last Name
+        br
+        input(type="text" name='lastName' placeholder='Last Name')
+    div
+        label Username
+        br
+        input(type="text" name='userName' placeholder='User Name')
+    div
+        label Email
+        br
+        input(type="email" name='email' placeholder='Email')
+    div
+        label Password
+        br
+        input(type="text" name='password' placeholder='PASSWORD')
+    div
+        label Confirm Password
+        br
+        input(type="text" name='confirmPassword' placeholder='PASSWORD')
+    div
+        button(type="submit") Log In

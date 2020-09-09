@@ -3,23 +3,23 @@ const cors = require('cors')
 const morgan = require("morgan");
 const { environment } = require('./config');
 const app = express();
+const cookieParser = require('cookie-parser');
+const { restoreUser } = require('./auth');
 // const indexRouter = require("./routes/index")
-const pagesRouter = require('./routes/pages')
+const homePage = require('./routes/homePage')
 const userBookshelf = require("./routes/bookshelves")
 
 app.use(morgan("dev"));
+app.use(cookieParser());
 app.use(express.json())
-app.use(cors({}));
+app.use(express.urlencoded({ extended: false }))
+// app.use(cors({}));
 app.set('view engine', 'pug')
-//latest code was pushed to git if youre interested in it. Nice, thanks Ill pull it
-// app.use('./images', express.static('images'))
 
-app.get('/', (req, res) => {
-  res.send('hello')
-});
 // app.use("/", indexRouter)
+app.use('/', homePage)
 app.use('/public', express.static('public'));
-app.use("/users", userBookshelf)
+app.use('/users', userBookshelf)
 
 // Catch unhandled requests and forward to error handler.
 app.use((req, res, next) => {
