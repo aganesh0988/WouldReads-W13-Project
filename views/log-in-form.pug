@@ -1,0 +1,13 @@
+form(method="post" action="/login")
+  div
+    input(type="hidden" name='_csrf' value=token)
+  div
+    label ENTER USERNAME
+    br
+    input(type="text" name='userName' placeholder='USERNAME')
+  div
+    label ENTER PASSWORD
+    br
+    input(type="text" name='password' placeholder='PASSWORD')
+  div
+    button(type="submit") Log In

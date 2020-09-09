@@ -38,10 +38,10 @@ module.exports = {
 };
 
 
-// firstName: new DataTypes.STRING,
-// lastName: new DataTypes.STRING,
-// authorPic: new DataTypes.STRING,
-// born: new DataTypes.DATE,
-// died: new DataTypes.DATE,
-// biography: new DataTypes.TEXT,
-// website: new DataTypes.STRING
+// firstName: DataTypes.STRING,
+// lastName: DataTypes.STRING,
+// authorPic: DataTypes.STRING,
+// born: DataTypes.DATE,
+// died: DataTypes.DATE,
+// biography: DataTypes.TEXT,
+// website: DataTypes.STRING
