@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
   res.send('hello')
 });
 // app.use("/", indexRouter)
-//app.use('/', pagesRouter)
+app.use('/pages', pagesRouter)
 
 // Catch unhandled requests and forward to error handler.
 app.use((req, res, next) => {
