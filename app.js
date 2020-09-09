@@ -11,12 +11,15 @@ app.use(morgan("dev"));
 app.use(express.json())
 app.use(cors({}));
 app.set('view engine', 'pug')
+//latest code was pushed to git if youre interested in it. Nice, thanks Ill pull it
+// app.use('./images', express.static('images'))
 
 app.get('/', (req, res) => {
   res.send('hello')
 });
 // app.use("/", indexRouter)
-app.use('/pages', pagesRouter)
+app.use('/public', express.static('public'));
+app.use("/users", userBookshelf)
 
 // Catch unhandled requests and forward to error handler.
 app.use((req, res, next) => {

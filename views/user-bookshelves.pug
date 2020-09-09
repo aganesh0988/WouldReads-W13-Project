@@ -6,5 +6,8 @@ html(lang="en")
         title Document
     body
         h2
-            each bookshelf in userBookshelves
-                div= book.Book.title
+            each booksArr, shelfName in shelves
+                h3= shelfName
+                    each book in booksArr
+                        div= book.Book.title
+                            img(src=`/public/images/${book.Book.cover}`)
