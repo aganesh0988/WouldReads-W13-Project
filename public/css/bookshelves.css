@@ -1,0 +1,20 @@
+/*
+.bookdetails:hover {
+    visibility: visible;
+} */
+
+.alldetails {
+    visibility: hidden;
+}
+
+.bookdetails {
+    position: absolute;
+}
+
+.imagedetails {
+    visibility: visible;
+}
+
+.alldetails:hover {
+    visibility: visible;
+}

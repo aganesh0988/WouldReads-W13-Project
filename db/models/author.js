@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       through: 'authorBook',
       foreignKey: 'authorId',
       otherKey: 'bookId'
-    })
+    });
   };
   return Author;
 };

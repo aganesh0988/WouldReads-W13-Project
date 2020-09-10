@@ -6,20 +6,27 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const { restoreUser } = require('./auth');
 // const indexRouter = require("./routes/index")
+
+const bookshelf = require('./routes/bookshelves')
+const userBookshelf = require("./routes/userBookshelves")
 const homePage = require('./routes/homePage')
-const userBookshelf = require("./routes/bookshelves")
+
+
 
 app.use(morgan("dev"));
 app.use(cookieParser());
 app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
-// app.use(cors({}));
+
+app.use(express.urlencoded({extended:false}))
+app.use(cors({}));
 app.set('view engine', 'pug')
 
 // app.use("/", indexRouter)
 app.use('/', homePage)
 app.use('/public', express.static('public'));
-app.use('/users', userBookshelf)
+
+app.use("/users", userBookshelf);
+app.use("/bookshelves", bookshelf);
 
 // Catch unhandled requests and forward to error handler.
 app.use((req, res, next) => {

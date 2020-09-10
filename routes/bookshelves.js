@@ -6,34 +6,26 @@ const user = require('../db/models/user');
 
 const router = express.Router();
 
-router.get("/:id/bookshelves", asyncHandler ( async (req, res) =>{
-    const userBooks = await userBook.findAll({
-        where: {userId: req.params.id},
-        include: [Book, Bookshelf]
-    })
+router.get("/create", (req,res)=>{
+    res.render('create-bookshelf')
+})
 
-    // let shelves = userBooks.filter(shelf => {
-    //     if(!shelves.includes(shelf.Bookshelf.shelfName)) {
-    //         return shelf.Bookshelf.shelfName
-    //     }
-    // })
-
-    let shelves = userBooks.reduce((shelvesObj, book) => {
-        if(!Object.keys(shelvesObj).includes(book.Bookshelf.shelfName)) {
-            shelvesObj[book.Bookshelf.shelfName] = [];
-        }
-        shelvesObj[book.Bookshelf.shelfName].push(book);
-        return shelvesObj;
-    }, {})
-
-    console.log('Shelves: ', shelves)
-
-    // console.log("this is my consolelog", shelves)
-    res.render('user-bookshelves', {shelves})
+router.post("/create", asyncHandler( async (req, res) =>{
+  const { shelfName, userBookId } = req.body
+  const newBookshelf = await Bookshelf.create({shelfName})
+  const oldUserBook = await userBook.findByPk(userBookId)
+  await userBook.create({
+    dateRead: oldUserBook.dateRead,
+    bookId: oldUserBook.bookId,
+    userId: oldUserBook.userId,
+    bookshelfId: newBookshelf.id,
+    statusId: oldUserBook.statusId
+  })
+  res.redirect(`/users/${oldUserBook.userId}/bookshelves`)
 }));
 
-router.post("/:id/bookshelves", asyncHandler(async(req, res) => {
-    res.send('Working')
+router.post("/delete/:id(//d+)", asyncHandler(async(req, res) => {
+  return;
 }));
 
 module.exports = router;
