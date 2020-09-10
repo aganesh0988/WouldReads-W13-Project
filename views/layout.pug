@@ -3,14 +3,17 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css")
     link(rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous")
     title netReads
     block head
   body
-    h2 netReads / ?reads / something
-    H3 Log In
-    include log-in-form
-    H3 Sign Up
-    include sign-up-form
+    h2 wouldReads (In a time before Netflix)
+      if locals.authenticated
+        include nav-bar.pug
+      else
+        include log-in-form
+        include sign-up-form
+    include book-container.pug
     block content
   footer

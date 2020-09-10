@@ -1,29 +1,40 @@
-form(method="post" action="/signup")
-    div
-        input(type="hidden" name='_csrf' value=token)
-    div
-        label First Name
-        br
-        input(type="text" name='firstName' placeholder='First Name')
-    div
-        label Last Name
-        br
-        input(type="text" name='lastName' placeholder='Last Name')
-    div
-        label Username
-        br
-        input(type="text" name='userName' placeholder='User Name')
-    div
-        label Email
-        br
-        input(type="email" name='email' placeholder='Email')
-    div
-        label Password
-        br
-        input(type="text" name='password' placeholder='PASSWORD')
-    div
-        label Confirm Password
-        br
-        input(type="text" name='confirmPassword' placeholder='PASSWORD')
-    div
-        button(type="submit") Log In
+form.pure-form.pure-form-aligned(method="post" action="/signup")
+    fieldset
+        div(class="pure-control-group")
+            input(type="hidden" name='_csrf' value=token)
+        div(class="pure-controls")
+            h3 Log In
+        div(class="pure-control-group")
+            label First Name
+            input(type="text" name='firstName' placeholder='First Name')
+        div(class="pure-control-group")
+            label Last Name
+            input(type="text" name='lastName' placeholder='Last Name')
+        div(class="pure-control-group")
+            label Username
+            input(type="text" name='userName' placeholder='User Name')
+        div(class="pure-control-group")
+            label Email
+            input(type="email" name='email' placeholder='Email')
+        div(class="pure-control-group")
+            label Password
+            input(type="password" name='password' placeholder='PASSWORD')
+        div(class="pure-control-group")
+            label Confirm Password
+            input(type="password" name='confirmPassword' placeholder='PASSWORD')
+        div(class="pure-controls")
+            button.pure-button.pure-button-primary(type="submit") Log In
+
+//- include utils.pug
+//-   +validationErrorSummary(errors)
+//-   form(action='/user/register' method='post')
+//-     input(type='hidden' name='_csrf' value=csrfToken)
+//-     +field('First Name', 'firstName', user.firstName)
+//-     +field('Last Name', 'lastName', user.lastName)
+//-     +field('Username', 'userName', user.userName)
+//-     +field('Email Address', 'email', user.email)
+//-     +field('Password', 'password', user.password, 'password')
+//-     +field('Confirm Password', 'confirmPassword', '', 'password')
+//-     div(class='py-4')
+//-       button(type='submit' class='btn btn-primary') Register
+//-       a(href='/' class='btn btn-warning ml-2') Cancel

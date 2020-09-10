@@ -3,8 +3,10 @@ const cors = require('cors')
 const morgan = require("morgan");
 const { environment } = require('./config');
 const app = express();
+const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const { restoreUser } = require('./auth');
+const { sessionSecret } = require('./config');
 
 
 //route imports
@@ -14,18 +16,25 @@ const userBookshelf = require("./routes/userBookshelves")
 const homePage = require('./routes/homePage')
 
 
-//middleware
-app.use(morgan("dev"));
-app.use(cookieParser());
-app.use(express.json())
-app.use(express.urlencoded({extended:false}))
-app.use(cors({}));
-
 //pug
 app.set('view engine', 'pug')
 
+//middleware
+app.use(morgan("dev"));
+app.use(cookieParser(sessionSecret));
+app.use(session({
+  name: 'goodreads-lite.sid',
+  secret: sessionSecret,
+  resave: false,
+  saveUninitialized: false,
+}));
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+// app.use(cors({}));
+
 //routes
 app.use('/public', express.static('public'));
+app.use(restoreUser);
 app.use('/', homePage)
 app.use("/books", books)
 app.use("/users", userBookshelf);
