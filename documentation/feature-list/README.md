@@ -10,10 +10,11 @@
 
 # Features - MVP
 --------------
-[ ] Homepage that has log-in / sign-up options / displays books
+[ ] Homepage that has log-in form/ sign-up form / displays books
 [ ] Sign up form where users submit their first name, last name, username, password.
-[ ] Log-in form where users provide their email and password to log into the site
-[ ] A Page to view a database of all available books displayed as covers (netflix style). Each cover is clickable for more info.
+[ ] Log-in form where users provide their email and password to log into the site.
+[ ] A container on homepage to view a database of all available books displayed as covers (netflix style). Each cover is clickable for more info.
+[ ] Nav bar that shows up after log-in that includes logo, myBooks (display user's bookshelves in books format), sign-out button
 [ ] A Page for info about individual book that displays cover, title, author, avg rating, summary, genres
 [ ] A user homepage that displays books by cover.
     [ ] On Hover shows the following info

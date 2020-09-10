@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous")
+        title Document
+    body
+    include nav-bar
+    div.pure-g
+        img(src=`/public/images/${book.cover}`, alt=`${book.title}`).pure-u-3-1.pure-u-md-1-3
+        span.pure-u-1.pure-u-md-1-10 Summary
+        span.pure-u-1-3.pure-u-md-1-10= book.summary
+        span.pure-u-1-3.pure-u-md-1-10= book.title
+        span.pure-u-1-3.pure-u-md-1-10= book.published
+        span.pure-u-1-3.pure-u-md-1-10= author.firstName
+        span.pure-u-1-3.pure-u-md-1-10= author.lastName

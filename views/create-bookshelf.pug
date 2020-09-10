@@ -1,5 +1,5 @@
 form(method="post" action="/bookshelves/create")
     label(for="shelfName") Shelf Name
-    input(type="text" name="shelfName" value=shelfName)
+    input(type="text" name="shelfName")
     button(type="submit") Create Shelf
-    input(type="hidden" name="book" value=book)
+    input(type="hidden" name=`userBookId` value=book.id)

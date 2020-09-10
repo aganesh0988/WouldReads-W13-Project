@@ -23,11 +23,7 @@ html(lang="en")
                                         p= book.Book.Reviews[0].rating
                                     else
                                         p="Unrated"
-                                    form(method="post" action="/bookshelves/create")
-                                        label(for="shelfName") Shelf Name
-                                        input(type="text" name="shelfName")
-                                        button(type="submit") Create Shelf
-                                        input(type="hidden" name=`userBookId` value=book.id)
+                                    include create-bookshelf
                                     form(method="post" action=`/users/${book.userId}/books/${book.bookId}/status`)
                                         select(onchange="this.form.submit()" name="status")
                                             option(value="1" name='status' selected=(book.Status.statusName === "Want to Read")) Want to Read
