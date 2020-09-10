@@ -1,7 +1,11 @@
 div.pure-menu.pure-menu-horizontal
     ul.pure-menu-list
         li.pure-menu-item
-            a.pure-menu-link(href="http://localhost:8080/users/1/bookshelves") myBookshelves
+            a.pure-menu-link.option(href="http://localhost:8080/books") Explore Books
         li.pure-menu-item
-            button(type="submit") Log Out
+            a.pure-menu-link.option(href="http://localhost:8080/users/1/bookshelves") myBookshelves
         li.pure-menu-item
+            a.pure-menu-link.option(href="http://localhost:8080/logout") Log Out
+
+//- form(class='form-inline pr-4' action='/logout' method='post')
+//-                 button(class='btn btn-warning button-large' type='submit') Logout

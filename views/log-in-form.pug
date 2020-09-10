@@ -1,13 +1,19 @@
-form(method="post" action="/login")
-  div
-    input(type="hidden" name='_csrf' value=token)
-  div
-    label ENTER USERNAME
-    br
-    input(type="text" name='userName' placeholder='USERNAME')
-  div
-    label ENTER PASSWORD
-    br
-    input(type="text" name='password' placeholder='PASSWORD')
-  div
-    button(type="submit") Log In
+include utils.pug
+
+form.pure-form.pure-form-aligned(method="post" action="/login")
+  fieldset
+    div(class="pure-control-group")
+      input(type="hidden" name='_csrf' value=token)
+    div(class="pure-controls")
+      h3 Log In
+    div(class="pure-control-group")
+      label(for="userName") Enter Username
+      input(type="text" name='userName' placeholder='Username' id="aligned-name")
+    div(class="pure-control-group")
+      label(for="password") Enter Password
+      input(type="password" name='password' placeholder='Password')
+    div(class="pure-controls")
+      button.pure-button.pure-button-primary(type="submit") Log In
+
+//- include utils.pug
+//-   +validationErrorSummary(errors)

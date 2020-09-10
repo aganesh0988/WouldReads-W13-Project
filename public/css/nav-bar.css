@@ -1,0 +1,20 @@
+.pure-menu {
+    background-color: rgb(0, 0, 0);
+    padding: 15px;
+    display:flex;
+    justify-content:center;
+    font-weight: bold;
+    font-family: helvetica;
+}
+.pure-menu-link.option{
+    color:rgb(229,9,20);;
+    font-family: helvetica;
+}
+
+.button-large {
+    font-size: 100%;
+}
+/*
+.pure-menu-horizontal{
+    margin: auto;
+} */

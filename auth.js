@@ -1,25 +1,47 @@
-const db = require('./db/models');
-const { jwtConfig } = require('./config');
 const { User } = require('./db/models');
-const bearerToken = require('express-bearer-token');
-const { secret, expiresIn } = jwtConfig;
 
-exports.loginUser = (user) => {
-  return jwt.sign(
-    { id: user.id, username: user.username },
-    secret,
-    { expiresIn: parseInt(expiresIn) } // expressed in seconds
-  );
+const loginUser = (req, res, user) => {
+  req.session.auth = {
+    userId: user.id,
+  };
 };
 
-exports.signupUser = async (token) => {
-  try {
-    const payload = jwt.verify(
-      token,
-      secret
-    );
-    return await User.findByPk(payload.id);
-  } catch (err) {
-    return null;
+const restoreUser = async (req, res, next) => {
+  if (req.session.auth) {
+    const { userId } = req.session.auth;
+
+    try {
+      const user = await User.findByPk(userId);
+
+      if (user) {
+        res.locals.authenticated = true;
+        res.locals.user = user;
+        next();
+      }
+    } catch (err) {
+      res.locals.authenticated = false;
+      next(err);
+    }
+  } else {
+    res.locals.authenticated = false;
+    next();
   }
-}
+};
+
+const requireAuth = (req, res, next) => {
+  if (!res.locals.authenticated) {
+    return res.redirect('/');
+  }
+  return next();
+};
+
+const logoutUser = (req, res) => {
+  delete req.session.auth;
+};
+
+module.exports = {
+  loginUser,
+  restoreUser,
+  logoutUser,
+  requireAuth
+};

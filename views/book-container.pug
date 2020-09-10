@@ -1,0 +1,14 @@
+link(rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css")
+link(rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous")
+script.
+    function move(bookId) {
+        console.log(bookId)
+        const id = parseInt(bookId, 10)
+        window.location.href = `/books/${id}`
+    }
+
+div All of the Books
+    each book in allBooks
+        div.pure-g
+            form(method="post" action=`/books/${book.id}`)
+                img(src=`/public/images/${book.cover}` id=book.id title:book.title width=auto height="300"  onclick=`move(${book.id})`)

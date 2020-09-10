@@ -1,18 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
+const { asyncHandler, handleValidationErrors, csrfProtection } = require('../utils.js');
 const db = require('../db/models');
+const { Book } = require('../db/models');
 const bcrypt = require('bcryptjs');
+const { loginUser, logoutUser } = require('../auth');
 
-const csrf = require('csurf');
-const csrfProtection = csrf({ cookie: true })
-
-const { asyncHandler, handleValidationErrors } = require('../utils.js')
-
-router.get("/", csrfProtection, asyncHandler(async (req, res) => {
-  res.render('layout', { token: req.csrfToken() })
-}));
-
+//validators
 const userValidators = [
   check('firstName')
     .exists({ checkFalsy: true })
@@ -70,7 +65,23 @@ const userValidators = [
     })
 ];
 
-router.post('/signup', csrfProtection, userValidators,
+const loginValidators = [
+  check('userName')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a value for Username'),
+  check('password')
+    .exists({ checkFalsy: true })
+    .withMessage('Please provide a value for Password'),
+];
+
+//routes
+router.get("/", csrfProtection, asyncHandler(async (req, res) => {
+  const allBooks = await Book.findAll({})
+  res.render('layout', { token: req.csrfToken(), allBooks })
+}));
+
+
+router.post('/signup', csrfProtection, userValidators, handleValidationErrors,
   asyncHandler(async (req, res) => {
     const {
       firstName,
@@ -94,12 +105,12 @@ router.post('/signup', csrfProtection, userValidators,
       const hashedPassword = await bcrypt.hash(password, 10);
       user.password = hashedPassword;
       await user.save();
-      //loginUser(req, res, user);
-      res.redirect('/');
+      loginUser(req, res, user);
+      res.redirect(`/users/${user.id}/bookshelves`);
     } else {
       const errors = validatorErrors.array().map((error) => error.msg);
       console.log(errors);
-      res.render('sign-up-form', {
+      res.render('/', {
         title: 'Sign Up',
         user,
         errors,
@@ -107,15 +118,6 @@ router.post('/signup', csrfProtection, userValidators,
       });
     }
   }));
-
-const loginValidators = [
-  check('userName')
-    .exists({ checkFalsy: true })
-    .withMessage('Please provide a value for Username'),
-  check('password')
-    .exists({ checkFalsy: true })
-    .withMessage('Please provide a value for Password'),
-];
 
 router.post('/login', csrfProtection, loginValidators,
   asyncHandler(async (req, res) => {
@@ -134,8 +136,8 @@ router.post('/login', csrfProtection, loginValidators,
         const passwordMatch = await bcrypt.compare(password, user.password.toString());
 
         if (passwordMatch) {
-          //loginUser(req, res, user);
-          return res.render('sign-up-form');
+          loginUser(req, res, user);
+          return res.redirect(`/`);
         }
       }
       errors.push('Login failed for the provided username and password');
@@ -143,7 +145,7 @@ router.post('/login', csrfProtection, loginValidators,
       errors = validatorErrors.array().map((error) => error.msg);
     }
 
-    res.render('log-in-form', {
+    res.render('/', {
       title: 'Login',
       username,
       errors,
@@ -151,9 +153,9 @@ router.post('/login', csrfProtection, loginValidators,
     });
   }));
 
-router.post('/logout', (req, res) => {
-  //todo
-  res.redirect('/log-in-form');
+router.get('/logout', (req, res) => {
+  logoutUser(req, res);
+  res.redirect('/');
 });
 
 
