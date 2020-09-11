@@ -76,8 +76,7 @@ const loginValidators = [
 
 //routes
 router.get("/", csrfProtection, asyncHandler(async (req, res) => {
-  const allBooks = await Book.findAll({})
-  res.render('book-container', { token: req.csrfToken(), allBooks })
+  res.render('layout', { token: req.csrfToken() })
 }));
 
 
@@ -106,7 +105,6 @@ router.post('/signup', csrfProtection, userValidators, handleValidationErrors,
       user.password = hashedPassword;
       await user.save();
       loginUser(req, res, user);
-      setUserId(user.id)
       res.redirect("/books")
     } else {
       const errors = validatorErrors.array().map((error) => error.msg);
