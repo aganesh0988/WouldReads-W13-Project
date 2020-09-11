@@ -26,17 +26,13 @@ router.get('/:id', csrfProtection, asyncHandler(async (req, res) => {
 }));
 
 const reviewValidators = [
-    check('')
+    check('bookRating')
       .exists()
-      .withMessage(''),
+      .withMessage('Please enter a rating between 1 and 5.'),
     check('')
-      .exists()
+      .exists('bookReview')
       .withMessage(''),
     ];
-
-// router.post('/:id/reviews/', csrfProtection, reviewValidators, handleValidationErrors, asyncHandler( async (req, res) => {
-//     res.redirect(`/books/${req.params.id}`, {token: csrfToken()})
-// }));
 
 router.post('/:id/reviews/', csrfProtection, asyncHandler( async (req, res) => {
     const userId = req.body.userId
