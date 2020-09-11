@@ -19,3 +19,11 @@ h3 {
 .nav-bar-container{
     padding:10px;
 }
+
+img.wouldReads{
+    position: relative;
+    width: 400px;
+    height: auto;
+    left: 30px;
+    top: 10px
+}
