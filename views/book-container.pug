@@ -7,6 +7,7 @@ html(lang="en")
     link(rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous")
     link(rel="stylesheet" href="/public/css/bookpage.css")
     link(rel="stylesheet" href="/public/css/booksContainer.css")
+    link(rel="stylesheet" href="/public/css/nav-bar.css")
     script.
         function move(bookId) {
             console.log(bookId)
@@ -16,8 +17,12 @@ html(lang="en")
     title wouldReads
     block head
   body
-    div.booksContainer.pure-g
+    if locals.authenticated
+      include nav-bar.pug
+    else
+      include forms-bar-homepage.pug
+      
+    div.booksContainer
         each book in allBooks
-            div.pure-u-1-5
-                form(method="post" action=`/books/${book.id}`)
-                    img(src=`/public/images/${book.cover}` id=book.id title:book.title width=auto height="300"  onclick=`move(${book.id})`)
+            form(method="post" action=`/books/${book.id}`) 
+                    img(src=`/public/images/${book.cover}` id=book.id title:book.title width="200" height="300"  onclick=`move(${book.id})`).books-container-cover

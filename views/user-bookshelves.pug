@@ -10,7 +10,7 @@ html(lang="en")
     body
         include nav-bar.pug
         input(type="hidden" value=token name="token")
-        div
+        div.page
             each booksArr, shelfName in shelves
                 h3= shelfName
                 div.shelf-container
