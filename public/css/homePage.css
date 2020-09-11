@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(20,20,20)
+    background-color: rgb(20,20,20);
 }
 
 h2 {
@@ -14,4 +14,8 @@ h3 {
     background-color: black;
 }
 
-.test { padding:  5px;}
+.test { margin:  5px;}
+
+.nav-bar-container{
+    padding:10px;
+}
