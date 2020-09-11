@@ -106,11 +106,12 @@ router.post('/signup', csrfProtection, userValidators, handleValidationErrors,
       user.password = hashedPassword;
       await user.save();
       loginUser(req, res, user);
-      res.redirect(`/users/${user.id}/bookshelves`);
+      setUserId(user.id)
+      res.redirect("/books")
     } else {
       const errors = validatorErrors.array().map((error) => error.msg);
       console.log(errors);
-      res.render('/', {
+      res.render('layout', {
         title: 'Sign Up',
         user,
         errors,
@@ -137,7 +138,7 @@ router.post('/login', csrfProtection, loginValidators,
 
         if (passwordMatch) {
           loginUser(req, res, user);
-          return res.redirect(`/`);
+          return res.redirect(`/books`);
         }
       }
       errors.push('Login failed for the provided username and password');
@@ -145,9 +146,9 @@ router.post('/login', csrfProtection, loginValidators,
       errors = validatorErrors.array().map((error) => error.msg);
     }
 
-    res.render('/', {
+    res.render('layout', {
       title: 'Login',
-      username,
+      userName,
       errors,
       csrfToken: req.csrfToken(),
     });

@@ -20,7 +20,7 @@ router.get("/:id/bookshelves", requireAuth, asyncHandler(async (req, res) => {
         shelvesObj[book.Bookshelf.shelfName].push(book);
         return shelvesObj;
     }, {})
-    res.render('user-bookshelves', { shelves })
+    res.render('user-bookshelves', { shelves, userId:req.params.id })
 }));
 
 //uid is userId bid is bookId
