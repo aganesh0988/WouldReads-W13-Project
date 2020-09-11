@@ -19,8 +19,5 @@ html(lang="en")
     title wouldReads
     block head
   body
-    div.booksContainer.pure-g
-        each book in allBooks
-            div.pure-u-1-5
-                form(method="post" action=`/books/${book.id}`)
-                    img(src=`/public/images/${book.cover}` id=book.id title:book.title width=auto height="300"  onclick=`move(${book.id})`)
+    include nav-bar.pug
+    include book-container.pug

@@ -8,7 +8,7 @@ const router = express.Router();
 router.get("/", asyncHandler(async (req, res) => {
     const allBooks = await Book.findAll({})
 
-    res.render("book-container", { allBooks })
+    res.render("explore-books", { allBooks })
 }))
 
 // "/books/:id(\\d++)"
