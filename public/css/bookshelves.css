@@ -60,18 +60,18 @@ body {
    border-top-width: 0;
    border-bottom-width: 0;
    position: absolute;
-   width: 0px;
+   width: 250px;
    height: 300px;
    top: 0px;
-   padding-left: 200px;
+   padding-left: 0px;
    overflow-y: scroll;
    overflow-x: hidden;
    z-index: 2;
-   transition: width .5s;
+   transition: padding-left .5s;
    background-clip: content-box;
 }
 .book-details:hover {
-    width: 251px;
+    padding-left: 200px;
 }
 
 .book-details h1 {

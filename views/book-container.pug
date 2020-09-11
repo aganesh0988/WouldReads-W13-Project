@@ -21,8 +21,19 @@ html(lang="en")
       include nav-bar.pug
     else
       include forms-bar-homepage.pug
-      
+
     div.booksContainer
         each book in allBooks
-            form(method="post" action=`/books/${book.id}`) 
-                    img(src=`/public/images/${book.cover}` id=book.id title:book.title width="200" height="300"  onclick=`move(${book.id})`).books-container-cover
+          div.book-container
+            form(method="post" action=`/books/${book.id}`)
+            img(src=`/public/images/${book.cover}` id=book.id title:book.title width="200" height="300"  onclick=`move(${book.id})`).books-container-cover.image-details
+            div.book-details
+                h1= book.title
+                p= book.Authors[0].firstName + ' ' + book.Authors[0].lastName + " | Rating: "
+                if book.Reviews.length > 0
+                    p= book.Reviews[0].rating
+                else
+                    p="Unrated"
+                p= book.summary
+                include create-bookshelf
+                button Delete

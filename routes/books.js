@@ -6,7 +6,7 @@ const { asyncHandler, handleValidationErrors, csrfProtection } = require("../uti
 const router = express.Router();
 
 router.get("/", asyncHandler(async (req, res) => {
-    const allBooks = await Book.findAll({})
+    const allBooks = await Book.findAll({include: [Author, Review]})
     res.render("book-container", { allBooks, userId:req.session.auth.userId })
 
 }))
