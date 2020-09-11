@@ -20,13 +20,13 @@ router.get("/:id/bookshelves", requireAuth, asyncHandler(async (req, res) => {
         shelvesObj[book.Bookshelf.shelfName].push(book);
         return shelvesObj;
     }, {})
+    console.log(shelves)
     res.render('user-bookshelves', { shelves, userId:req.params.id })
 }));
 
 //uid is userId bid is bookId
 router.post('/:uid/books/:bid/status', asyncHandler(async (req, res) => {
     const statusId = req.body.status
-    console.log(statusId);
 
     const bookStatus = await userBook.findOne({
         where: [{ bookId: req.params.bid }, { userId: req.params.uid }],

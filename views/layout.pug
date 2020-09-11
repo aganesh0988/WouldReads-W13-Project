@@ -8,11 +8,6 @@ html(lang="en")
     link(rel="stylesheet" href="/public/css/bookpage.css")
     link(rel="stylesheet" href="/public/css/nav-bar.css")
     title wouldReads
-    block head
-  body
-    if locals.authenticated
-      include nav-bar.pug
-    else
-      include forms-bar-homepage.pug
-    block content
+  body(background="/public/images/wp2151531.jpg")
+      include forms-bar-homepage
   footer
