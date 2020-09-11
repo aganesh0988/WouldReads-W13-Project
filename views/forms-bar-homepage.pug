@@ -1,12 +1,9 @@
 link(rel="stylesheet" href="/public/css/homePage.css")
-div.pure-g.homepageLogin
-        div.test
-            //h2.pure-u-1-3 wouldReads (In a time before Netflix)
-            h2
-            img.wouldReads.pure-img-u-1-3(src="../public/images/WouldReadsIMG.jpg")
-            div.pure-u-1-3
-                div.test
-                    include log-in-form
-            div.pure-u-1-3
-                div.test
-                    include sign-up-form
+div.homepageLogin
+    div.logo-container
+        img.wouldReads.pure-img-u-1-3(src="../public/images/WouldReadsIMG.jpg")
+    div.flex-spacer
+    div.login-container
+        include log-in-form
+    div.signup-container
+        include sign-up-form

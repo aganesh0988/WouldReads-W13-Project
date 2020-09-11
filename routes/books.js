@@ -7,8 +7,8 @@ const router = express.Router();
 
 router.get("/", asyncHandler(async (req, res) => {
     const allBooks = await Book.findAll({})
+    res.render("book-container", { allBooks, userId:req.session.auth.userId })
 
-    res.render("explore-books", { allBooks, userId:req.session.auth.userId })
 }))
 
 router.get('/:id', csrfProtection, asyncHandler(async (req, res) => {
