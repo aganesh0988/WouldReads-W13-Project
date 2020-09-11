@@ -106,6 +106,16 @@ body {
     height: 320px;
     display: flex;
 }
+
+img.wouldReads{
+    position: relative;
+    width: 200px;
+    height: auto;
+    top: 10px;
+}
+
+
+
 @media only screen and (max-width: 1000px) {
     .shelf-container {
       display: flex;

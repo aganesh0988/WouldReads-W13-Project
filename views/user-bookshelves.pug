@@ -15,6 +15,7 @@ html(lang="en")
                 h3= shelfName
                 div.shelf-container
                     each book in booksArr
+                        form(method="post" action=`/books/${book.id}`)
                         div.book-container
                             img(src=`/public/images/${book.Book.cover}` id=book.Book.id title:book.Book.title width="200" height="300").image-details
                             div.book-details
@@ -26,10 +27,11 @@ html(lang="en")
                                     p="Unrated"
                                 p= book.Book.summary
                                 include create-bookshelf
+                                form(action=`/bookshelves/${book.userId}/delete/${shelfName}` method="post")
+                                    button(type="submit") Delete Bookshelf
                                 form(method="post" action=`/users/${book.userId}/books/${book.bookId}/status`)
                                     select(onchange="this.form.submit()" name="status")
                                         option(value="1" name='status' selected=(book.Status.statusName === "Want to Read")) Want to Read
                                         option(value="2" name='status' selected=(book.Status.statusName === "Reading")) Reading
                                         option(value="3" name='status' selected=(book.Status.statusName === "Read")) Read
                                         option(value="4" name='status' selected=(book.Status.statusName === "None")) None
-                                button Delete
