@@ -8,12 +8,10 @@ html(lang="en")
     title netReads
     block head
   body
-    h2 wouldReads (In a time before Netflix)
-      if locals.authenticated
-        include nav-bar.pug
-      else
-        include log-in-form
-        include sign-up-form
+    if locals.authenticated
+      include nav-bar.pug
+    else
+      include forms-bar-homepage.pug
     include book-container.pug
     block content
   footer

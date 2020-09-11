@@ -2,24 +2,40 @@ body {
     background-color: rgb(20,20,20)
 }
 .pure-g {
- font-family: helvetica;
+ font-family: helvetica, sans-serif;
  color: white;
 }
 
 .bookdisplay {
-    width: 500px;
+    width: 700px;
     margin: auto;
-    font-family: helvetica;
+    overflow: hidden;
+}
+
+.bookInfo {
+    width: 350px;
+    height: 500px;
+    overflow-y: scroll
 }
 
 .bookCover {
     padding-right: 10px;
-    padding-top: 5px;
+}
+
+.bookTitle {
+    color: rgb(229,9,20);
+}
+.reviewContainer {
+    border-style: solid;
+    border-color: white;
+    margin-top: 5px;
+    padding: 10px;
 }
 
 .review {
-    padding-top: 10px;
+    padding-top: 5px;
 }
+
 
 .spacer {
     padding-left: 3px
