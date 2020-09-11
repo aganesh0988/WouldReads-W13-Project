@@ -3,7 +3,7 @@ body {
 }
 .pure-g {
  font-family: helvetica, sans-serif;
- color: white;
+ color: black;
 }
 
 .bookdisplay {
@@ -15,7 +15,8 @@ body {
 .bookInfo {
     width: 350px;
     height: 500px;
-    overflow-y: scroll
+    overflow-y: scroll;
+    color: white;
 }
 
 .bookCover {
@@ -30,6 +31,7 @@ body {
     border-color: white;
     margin-top: 5px;
     padding: 10px;
+    color: white;
 }
 
 .review {
