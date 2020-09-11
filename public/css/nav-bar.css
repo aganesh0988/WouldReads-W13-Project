@@ -2,9 +2,10 @@
     background-color: rgb(0, 0, 0);
     padding: 15px;
     display:flex;
-    justify-content:center;
+    justify-content:space-around;
     font-weight: bold;
     font-family: helvetica;
+    font-size: larger;
 }
 .pure-menu-link.option{
     color:rgb(229,9,20);;
@@ -18,3 +19,15 @@
 .pure-menu-horizontal{
     margin: auto;
 } */
+
+img.wouldReads{
+    position: relative;
+    width: 200px;
+    height: auto;
+    top: 10px;
+}
+
+.pure-menu-el{
+    display: flex;
+    align-items: flex-end;
+}

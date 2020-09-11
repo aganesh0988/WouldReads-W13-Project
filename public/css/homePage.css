@@ -15,7 +15,7 @@ h3 {
     width: auto;
     margin: 0;
     display: flex;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
 }
 
 .homepageLogin div input {
@@ -32,22 +32,29 @@ h3 {
 
 .login-container, .signup-container {
     border-left: 2px solid rgb(20,20,20);
-    padding-left: 30px;
+    padding-left: 300px;
     margin: 15px 20px 15px 0;
 }
 
 .signup-container {
-    justify-self: end;
+display: flex;
+justify-content: right;
+padding-left: 40px;
+}
+
+.login-container{
+display: flex;
+justify-content: right;
 }
 
 .flex-spacer {
     flex-grow: 1;
 }
 
-img.wouldReads{
+img.wouldReadsHome{
     position: relative;
-    width: 400px;
+    width: 480px;
     height: auto;
-    left: 30px;
-    top: 10px
+    left: 150px;
+    top: 40px
 }
