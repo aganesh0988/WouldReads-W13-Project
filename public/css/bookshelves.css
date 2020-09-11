@@ -1,20 +1,117 @@
-/*
-.bookdetails:hover {
-    visibility: visible;
-} */
+body {
+    overflow-x: hidden;
+    background-color: rgb(22, 22, 22);
+    color: rgb(226, 226, 226);
+    scrollbar-color: rgb(229, 9, 20) rgb(22, 22, 22);
+    scrollbar-width: 3px;
+}
 
-.alldetails {
+::-webkit-scrollbar {
+    width: 3px;
+    color: rgb(22, 22, 22);
+}
+::-webkit-scrollbar:horizontal {
+    height: 3px;
+    color: rgb(22, 22, 22);
+}
+
+
+::-webkit-scrollbar-track {
+    width: 3px;
+    color: rgb(22, 22, 22);
+   /* background-color: white; */
+}
+::-webkit-scrollbar-track:horizontal {
+    height: 3px;
+    color: rgb(22, 22, 22);
+   /* background-color: white; */
+}
+
+
+::-webkit-scrollbar-thumb {
+    width: 3px;
+    border-radius: 3px;
+    background-color: rgb(229, 9, 20);
+}
+::-webkit-scrollbar-thumb:horizontal {
+    height: 3px;
+    border-radius: 3px;
+    background-color: rgb(229, 9, 20);
+}
+
+
+.book-container {
+    flex-direction: horizontal;
     visibility: hidden;
+    display: inline;
+    position: relative;
+    margin: 0 8px 0 8px;
 }
 
-.bookdetails {
-    position: absolute;
+.book-details {
+   background-color: black;
+   color: white;
+   border: 1px solid black;
+   border-top-width: 0;
+   border-bottom-width: 0;
+   position: absolute;
+   width: 0px;
+   height: 300px;
+   top: 0px;
+   padding-left: 200px;
+   overflow-y: scroll;
+   overflow-x: hidden;
+   z-index: 2;
+   transition: width .5s;
+   background-clip: content-box;
+}
+.book-details:hover {
+    width: 251px;
 }
 
-.imagedetails {
+.book-details h1 {
+    color: rgb(229,9,20);
+    font-family: helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 10px 0 10px
+}
+
+.book-details p, label, button, select, input {
+    font-family: helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 330;
+    padding: 0 10px 0 10px;
+    display: inline-block;
+}
+
+.image-details {
     visibility: visible;
+    z-index: 1;
 }
 
-.alldetails:hover {
+.book-container:hover {
     visibility: visible;
+
 }
+
+.shelf-container {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 320px;
+    display: flex;
+}
+@media only screen and (max-width: 1000px) {
+    .shelf-container {
+      display: flex;
+      flex-flow: wrap;
+      justify-content: flex-start;
+      overflow: scroll;
+    }
+    .book-details {
+        display: flex;
+        flex-flow: wrap;
+        overflow: scroll;
+
+    }
+  }
