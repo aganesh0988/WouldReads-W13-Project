@@ -11,18 +11,18 @@ html(lang="en")
             div
                 each booksArr, shelfName in shelves
                     h3= shelfName
-                    div.pure-g
+                    div.shelf-container
                         each book in booksArr
-                            div.pure-u-1-5.pure-u-md-1-3.pure-u-sm-1.alldetails
-                                img(src=`/public/images/${book.Book.cover}` id=book.Book.id title:book.Book.title width=auto height="300").imagedetails
-                                div.bookdetails
-                                    p= book.Book.title
-                                    p= book.Book.Authors[0].firstName + ' ' + book.Book.Authors[0].lastName
-                                    p= book.Book.summary
+                            div.book-container
+                                img(src=`/public/images/${book.Book.cover}` id=book.Book.id title:book.Book.title width="200" height="300").image-details
+                                div.book-details
+                                    h1= book.Book.title
+                                    p= book.Book.Authors[0].firstName + ' ' + book.Book.Authors[0].lastName + " | Rating: "
                                     if book.Book.Reviews.length > 0
                                         p= book.Book.Reviews[0].rating
                                     else
                                         p="Unrated"
+                                    p= book.Book.summary
                                     include create-bookshelf
                                     form(method="post" action=`/users/${book.userId}/books/${book.bookId}/status`)
                                         select(onchange="this.form.submit()" name="status")
