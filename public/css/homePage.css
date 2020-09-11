@@ -43,3 +43,11 @@ h3 {
 .flex-spacer {
     flex-grow: 1;
 }
+
+img.wouldReads{
+    position: relative;
+    width: 400px;
+    height: auto;
+    left: 30px;
+    top: 10px
+}

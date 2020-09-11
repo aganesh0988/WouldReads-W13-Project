@@ -1,0 +1,10 @@
+form.pure-g.pure-form(method="post" action=`/books/${book.id}/reviews`)
+  fieldset.userReviewContainer
+    h3.pure-u-1 User Review
+    input.pure-u-1-4(type="number" name='bookRating' placeholder='Rating out of 5' id="bookRating")
+    div.pure-u-3-4.review
+    textarea.pure-u-15-16(type="textarea" name='bookReview' placeholder='Review' id='bookReview' rows="6" cols="50")
+    div.pure-u-1-16.review
+    button.pure-button.pure(type="submit") Submit
+    input(type="hidden" name='_csrf' value=token)
+    input(type="hidden" name='userId' value=userId)
