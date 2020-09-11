@@ -77,7 +77,7 @@ const loginValidators = [
 //routes
 router.get("/", csrfProtection, asyncHandler(async (req, res) => {
   const allBooks = await Book.findAll({include: [Author, Review]})
-  res.render('book-container', { token: req.csrfToken(), allBooks })
+  res.render('layout', { token: req.csrfToken(), allBooks })
 }));
 
 
