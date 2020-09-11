@@ -30,6 +30,11 @@ h3 {
 
 } */
 
+.pure-button {
+    background-color: black;
+    border: 1px solid white;
+}
+
 .login-container, .signup-container {
     border-left: 2px solid rgb(20,20,20);
     padding-left: 300px;

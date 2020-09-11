@@ -3,7 +3,7 @@ const router = express.Router();
 const { check, validationResult } = require('express-validator');
 const { asyncHandler, handleValidationErrors, csrfProtection } = require('../utils.js');
 const db = require('../db/models');
-const { Book } = require('../db/models');
+const { Book, Author, Review } = require('../db/models');
 const bcrypt = require('bcryptjs');
 const { loginUser, logoutUser } = require('../auth');
 
@@ -76,7 +76,8 @@ const loginValidators = [
 
 //routes
 router.get("/", csrfProtection, asyncHandler(async (req, res) => {
-  res.render('layout', { token: req.csrfToken() })
+  const allBooks = await Book.findAll({include: [Author, Review]})
+  res.render('book-container', { token: req.csrfToken(), allBooks })
 }));
 
 

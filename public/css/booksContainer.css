@@ -46,3 +46,61 @@
     border-radius: 3px;
     background-color: rgb(229, 9, 20);
 }
+
+
+.book-container {
+    flex-direction: horizontal;
+    visibility: hidden;
+    display: inline;
+    position: relative;
+    margin: 0 8px 0 8px;
+}
+
+.book-details button {
+    background-color: black;
+}
+
+.book-details {
+   background-color: black;
+   color: white;
+   position: absolute;
+   width: 251px;
+   height: 300px;
+   padding-left: 0;
+   top: 10px;
+   left: 10px;
+   overflow-y: scroll;
+   overflow-x: hidden;
+   z-index: 2;
+   transition: padding-left .5s;
+   background-clip: content-box;
+}
+.book-details:hover {
+    padding-left: 200px;
+}
+
+.book-details h1 {
+    color: rgb(229,9,20);
+    font-family: helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 10px 0 10px
+}
+
+.book-details p, label, button, select, input {
+    font-family: helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 330;
+    padding: 0 10px 0 10px;
+    display: inline-block;
+}
+
+.image-details {
+    visibility: visible;
+    z-index: 1;
+}
+
+.book-container:hover {
+    visibility: visible;
+
+}
