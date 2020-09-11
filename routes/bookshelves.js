@@ -11,17 +11,17 @@ router.get("/create", (req,res)=>{
 })
 
 router.post("/create", asyncHandler( async (req, res) =>{
-  const { shelfName, userBookId } = req.body
+  const { shelfName, userBookId, userId } = req.body
   const newBookshelf = await Bookshelf.create({shelfName})
   const oldUserBook = await userBook.findByPk(userBookId)
   await userBook.create({
     dateRead: oldUserBook.dateRead,
     bookId: oldUserBook.bookId,
-    userId: oldUserBook.userId,
+    userId: userId,
     bookshelfId: newBookshelf.id,
     statusId: oldUserBook.statusId
   })
-  res.redirect(`/users/${oldUserBook.userId}/bookshelves`)
+  res.redirect(`/users/${userId}/bookshelves`)
 }));
 
 router.post("/:uid/delete/:shelfName", asyncHandler(async(req, res) => {
