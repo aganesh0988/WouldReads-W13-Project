@@ -46,3 +46,36 @@ body {
 .top {
     padding-top: 5px;
 }
+
+::-webkit-scrollbar {
+    width: 3px;
+    color: rgb(22, 22, 22);
+}
+::-webkit-scrollbar:horizontal {
+    height: 3px;
+    color: rgb(22, 22, 22);
+}
+
+
+::-webkit-scrollbar-track {
+    width: 3px;
+    color: rgb(22, 22, 22);
+   /* background-color: white; */
+}
+::-webkit-scrollbar-track:horizontal {
+    height: 3px;
+    color: rgb(22, 22, 22);
+   /* background-color: white; */
+}
+
+
+::-webkit-scrollbar-thumb {
+    width: 3px;
+    border-radius: 3px;
+    background-color: rgb(229, 9, 20);
+}
+::-webkit-scrollbar-thumb:horizontal {
+    height: 3px;
+    border-radius: 3px;
+    background-color: rgb(229, 9, 20);
+}
