@@ -56,6 +56,10 @@
     margin: 0 8px 0 8px;
 }
 
+.book-details button {
+    background-color: black;
+}
+
 .book-details {
    background-color: black;
    color: white;
