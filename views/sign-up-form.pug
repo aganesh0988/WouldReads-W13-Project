@@ -1,35 +1,30 @@
-form.pure-form.pure-form-aligned.signUpForm(method="post" action="/signup")
+form.pure-form.signUpForm(method="post" action="/signup")
     fieldset
         h3 Sign Up
-        div.pure-g
-            div.pure-u-1-3
-                div(class="pure-control-group")
+        div.signup-form-container
+            div
+                div
                     //- label First Name
                     input(type="text" name='firstName' placeholder='First Name')
-            div.pure-u-1-3
-                div(class="pure-control-group")
+                div
                     //- label Last Name
                     input(type="text" name='lastName' placeholder='Last Name')
-            div.pure-u-1-3
-                div(class="pure-control-group")
+                div
                     //- label Username
                     input(type="text" name='userName' placeholder='User Name')
-            div.pure-u-1-3
-                div(class="pure-control-group")
+                div
+                    button.pure-button.pure-button-primary(type="submit") Create Account
+                    input(type="hidden" name='_csrf' value=token)
+            div
+                div
                     //- label Email
                     input(type="email" name='email' placeholder='Email')
-            div.pure-u-1-3
-                div(class="pure-control-group")
+                div
                     //- label Password
                     input(type="password" name='password' placeholder='Password')
-            div.pure-u-1-3
-                div(class="pure-control-group")
+                div
                     //- label Confirm Password
-                    input(type="password" name='confirmPassword' placeholder='Password')
-            div.pure-u-1-3
-                div(class="pure-controls")
-                    button.pure-button.pure-button-primary(type="submit") Log In
-                    input(type="hidden" name='_csrf' value=token)
+                    input(type="password" name='confirmPassword' placeholder=' Confirm Password')
 
 //- include utils.pug
 //-   +validationErrorSummary(errors)

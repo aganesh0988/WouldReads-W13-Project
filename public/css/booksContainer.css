@@ -1,9 +1,17 @@
 .booksContainer {
-    width: 1100px;
+    /* width: 1100px; */
     height: 900px;
-    margin: auto;
+    /* margin: auto; */
     padding: 10px;
-    overflow: scroll;
+    overflow: visible;
+    width: auto;
+    margin: 0 100px 0 100px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.books-container-cover {
+    padding: 10px;
 }
 
 ::-webkit-scrollbar {

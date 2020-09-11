@@ -12,10 +12,34 @@ h3 {
 
 .homepageLogin {
     background-color: black;
+    width: auto;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
-.test { margin:  5px;}
+.homepageLogin div input {
+    margin: 0 5px 10px 0;
+}
 
-.nav-bar-container{
-    padding:10px;
+.signup-form-container {
+    display: flex;
+}
+
+/* .signup-form-ele {
+
+} */
+
+.login-container, .signup-container {
+    border-left: 2px solid rgb(20,20,20);
+    padding-left: 30px;
+    margin: 15px 20px 15px 0;
+}
+
+.signup-container {
+    justify-self: end;
+}
+
+.flex-spacer {
+    flex-grow: 1;
 }
