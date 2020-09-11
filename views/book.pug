@@ -25,6 +25,15 @@ html(lang="en")
                     span.pure-u-1 Summary
                 div.top
                     span.pure-u-1= book.summary
+        if userReview
+            div.pure-u-1.reviewContainer
+                div.review
+                    span.pure-u-1 My Review
+                    span.pure-u-1=  `Rating: ${userReview.rating} / 5`
+                div.review
+                    span.pure-u-1= userReview.review
+        else
+            include review-form.pug
         each r in review
             div.pure-u-1.reviewContainer
                 div.review

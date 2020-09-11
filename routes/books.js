@@ -1,47 +1,58 @@
 const express = require('express');
 const { userBook, Book, Bookshelf, authorBook, Author, Review } = require('../db/models');
 const { check } = require('express-validator');
-const { asyncHandler, handleValidationErrors } = require("../utils");
+const { asyncHandler, handleValidationErrors, csrfProtection } = require("../utils");
 
 const router = express.Router();
 
 router.get("/", asyncHandler(async (req, res) => {
     const allBooks = await Book.findAll({})
 
-    res.render("explore-books", { allBooks })
+    res.render("explore-books", { allBooks, userId:req.session.auth.userId })
 }))
 
-// "/books/:id(\\d++)"
-// action: get
-// page: render "single-book.pug"
-// notes: displays book cover, title, published date, author, summary, genre
-// notes: displays books reviews
-// notes: include button that links to "/books/:id/review"
-router.get('/:id', asyncHandler(async (req, res) => {
+router.get('/:id', csrfProtection, asyncHandler(async (req, res) => {
+    const userId = req.session.auth.userId
     const book = await Book.findByPk(req.params.id)
     const author = await authorBook.findAll({
         where: { bookId: req.params.id },
         include: Author
     })
+    const userReview = await Review.findOne({
+        where:[{bookId:req.params.id,}, {userId}]
+    })
     const review = await Review.findAll({ where: { bookId: req.params.id } })
-    // console.log("I am a console log", author[0].Author.firstName)
-    res.render('book', { book, author, review })
+    res.render('book', { book, author, review, userReview, userId, token: req.csrfToken() })
 }));
 
-// "/books/:id/reviews"
-// action: get
-// page: render "review-form.pug"
-// notes: form that allows for user to input rating (integer) and review (text)
-router.get('/:id/reviews', (req, res) => {
+const reviewValidators = [
+    check('')
+      .exists()
+      .withMessage(''),
+    check('')
+      .exists()
+      .withMessage(''),
+    ];
 
-})
+// router.post('/:id/reviews/', csrfProtection, reviewValidators, handleValidationErrors, asyncHandler( async (req, res) => {
+//     res.redirect(`/books/${req.params.id}`, {token: csrfToken()})
+// }));
 
+router.post('/:id/reviews/', csrfProtection, asyncHandler( async (req, res) => {
+    const userId = req.body.userId
+    const book = await Book.findByPk(req.params.id)
+    const author = await authorBook.findAll({
+        where: { bookId: req.params.id },
+        include: Author
+    })
+    const userReview = await Review.create({
+        rating: req.body.bookRating,
+        review: req.body.bookReview,
+        userId: userId,
+        bookId: req.params.id
+    })
+    const review = await Review.findAll({ where: { bookId: req.params.id } })
+    res.render('book', { book, author, review, userReview, userId, token: req.csrfToken() })
+}));
 
-// "/books/:id/reviews"
-// action: post
-// page: render "/books/:id(\\d++)"
-// notes: creates review in DB and redirects to that book's info page
-router.post('/:id/reviews', (req, res) => {
-
-})
 module.exports = router;

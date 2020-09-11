@@ -47,6 +47,13 @@ body {
     padding-top: 5px;
 }
 
+.userReviewContainer {
+    color: white;
+    width: 700px;
+    height: 250px;
+    overflow: hidden;
+}
+
 ::-webkit-scrollbar {
     width: 3px;
     color: rgb(22, 22, 22);
@@ -55,7 +62,6 @@ body {
     height: 3px;
     color: rgb(22, 22, 22);
 }
-
 
 ::-webkit-scrollbar-track {
     width: 3px;

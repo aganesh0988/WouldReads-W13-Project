@@ -33,8 +33,8 @@ app.use(express.urlencoded({ extended: false }))
 // app.use(cors({}));
 
 //routes
-app.use('/public', express.static('public'));
 app.use(restoreUser);
+app.use('/public', express.static('public'));
 app.use('/', homePage)
 app.use("/books", books)
 app.use("/users", userBookshelf);
