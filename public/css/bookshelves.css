@@ -90,6 +90,10 @@ body {
     display: inline-block;
 }
 
+.book-details button {
+    color: white;
+}
+
 .image-details {
     visibility: visible;
     z-index: 1;
