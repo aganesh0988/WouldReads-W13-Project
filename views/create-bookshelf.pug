@@ -1,6 +1,7 @@
-form(method="post" action="/bookshelves/create")
+link(rel="stylesheet" href="/public/css/booksContainer.css")
+form(method="post" action="/bookshelves/create" onclick="event.stopPropagation()")
     label(for="shelfName") Shelf Name
-    input(type="text" name="shelfName")
+    input.createShelf(type="text" name="shelfName")
     button(type="submit") Create Shelf
     input(type="hidden" name=`userBookId` value=book.id)
     input(type="hidden" name=`userId` value=userId)

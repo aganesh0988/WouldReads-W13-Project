@@ -10,7 +10,6 @@ html(lang="en")
     link(rel="stylesheet" href="/public/css/nav-bar.css")
     script.
         function move(bookId) {
-            console.log(bookId)
             const id = parseInt(bookId, 10)
             window.location.href = `/books/${id}`
         }
