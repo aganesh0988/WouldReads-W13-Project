@@ -15,11 +15,12 @@ h3 {
     width: auto;
     margin: 0;
     display: flex;
-    /*justify-content: space-between;*/
+    /* justify-content: space-around; */
 }
 
 .homepageLogin div input {
     margin: 0 5px 10px 0;
+    font-size: 12px;
 }
 
 .signup-form-container {
@@ -36,20 +37,20 @@ h3 {
 }
 
 .login-container, .signup-container {
-    border-left: 2px solid rgb(20,20,20);
     padding-left: 300px;
     margin: 15px 20px 15px 0;
 }
 
 .signup-container {
-display: flex;
-justify-content: right;
-padding-left: 40px;
+    border-left: 2px solid rgb(20,20,20);
+    display: flex;
+    justify-content: right;
+    padding-left: 30px;
 }
 
 .login-container{
-display: flex;
-justify-content: right;
+    display: flex;
+    justify-content: right;
 }
 
 .flex-spacer {
@@ -58,8 +59,8 @@ justify-content: right;
 
 img.wouldReadsHome{
     position: relative;
-    width: 480px;
+    width: 440px;
     height: auto;
     left: 150px;
-    top: 40px
+    top: 40px;
 }

@@ -16,10 +16,10 @@ router.post("/create", asyncHandler( async (req, res) =>{
   const oldUserBook = await userBook.findByPk(userBookId)
   await userBook.create({
     dateRead: oldUserBook.dateRead,
-    bookId: oldUserBook.bookId,
+    bookId: userBookId,
     userId: userId,
     bookshelfId: newBookshelf.id,
-    statusId: oldUserBook.statusId
+    statusId: 1
   })
   res.redirect(`/users/${userId}/bookshelves`)
 }));

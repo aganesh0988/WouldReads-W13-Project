@@ -3,7 +3,7 @@ body {
     background-color: rgb(22, 22, 22);
     color: rgb(226, 226, 226);
     scrollbar-color: rgb(229, 9, 20) rgb(22, 22, 22);
-    scrollbar-width: 3px;
+    scrollbar-width: thin;
 }
 
 .page {
@@ -82,12 +82,21 @@ body {
     padding: 0 10px 0 10px
 }
 
-.book-details p, label, button, select, input {
+.book-details p, label, button, select, input, form {
     font-family: helvetica, sans-serif;
     font-size: 14px;
     font-weight: 330;
-    padding: 0 10px 0 10px;
+    padding: 0 10px 0px 10px;
     display: inline-block;
+}
+
+.book-details select, button {
+    margin: 0 0 10px 0;
+}
+
+.book-details button {
+    color: white;
+    background-color: black;
 }
 
 .image-details {
