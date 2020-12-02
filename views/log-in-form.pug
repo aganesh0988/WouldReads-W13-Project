@@ -7,9 +7,9 @@ form.pure-form(method="post" action="/login")
       div
         input(type="hidden" name='_csrf' value=token)
       div
-        input(type="text" name='userName' placeholder='Username' id="aligned-name")
+        input(type="text" name='userName' placeholder='Username' value='demo' id="aligned-name")
       div
-        input(type="password" name='password' placeholder='Password')
+        input(type="password" name='password' placeholder='Password' value='password')
       div
         button.pure-button.pure-button-primary(type="submit") Log In
 
