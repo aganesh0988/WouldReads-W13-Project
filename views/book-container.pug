@@ -8,12 +8,13 @@ html(lang="en")
     link(rel="stylesheet" href="/public/css/bookpage.css")
     link(rel="stylesheet" href="/public/css/booksContainer.css")
     link(rel="stylesheet" href="/public/css/nav-bar.css")
+    link(rel="icon" href="/public/favicon.ico")
+    title Would Reads
     script.
         function move(bookId) {
             const id = parseInt(bookId, 10)
             window.location.href = `/books/${id}`
         }
-    title wouldReads
     block head
   body
     if locals.authenticated

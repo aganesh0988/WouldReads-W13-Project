@@ -80,7 +80,7 @@
    background-clip: content-box;
 }
 .book-details:hover {
-    padding-left: 200px;
+    padding-left: 92%;
 }
 
 .book-details h1 {
