@@ -83,3 +83,8 @@ div.footer-links>a:link,a:visited{
     text-decoration: none;
     color: black;
 }
+
+div.footer-links>a:hover{
+    transition: 0.3s;
+    color: white;
+}
