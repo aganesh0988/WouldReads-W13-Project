@@ -7,10 +7,10 @@
   </a>
 </p>
 
-
+<br /><br />
 
 # About The Project
-
+WouldReads is a clone of GoodReads.com with a Netflix style. The JavaScript application uses Pug for the frontend and Express for the backend.
 
 
 
