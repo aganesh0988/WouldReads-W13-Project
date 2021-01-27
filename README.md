@@ -24,14 +24,14 @@ We developed this full-stack application using a JavaScript / Pug frontend and a
 <img align="left" height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png">
 <img align="left" height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png">
 
-
+<br />
 
 
 Deployed with:
 * [<img alt="Heroku icon" src="https://img.icons8.com/color/452/heroku.png" align="left" height="20">](https://www.heroku.com/) [Heroku](https://www.heroku.com/)
 
 
-<br />
+<br /><br />
 
 
 ![Homepage for WR.](https://i.gyazo.com/3b7585ba65a6126fa1113bc6b717bfc2.png)
