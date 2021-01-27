@@ -31,6 +31,13 @@ Deployed with:
 * [<img alt="Heroku icon" src="https://img.icons8.com/color/452/heroku.png" align="left" height="20">](https://www.heroku.com/) [Heroku](https://www.heroku.com/)
 
 
+<br />
+
+
+![Homepage for WR.](https://i.gyazo.com/3b7585ba65a6126fa1113bc6b717bfc2.png)
+
+
+
 
 [live-link-shield]: https://img.shields.io/badge/-LiveLink-red?style=for-the-badge&logo=red
 [live-link-url]: https://wouldreadz.herokuapp.com/
