@@ -1,6 +1,11 @@
-[![Live Link][live-link-shield]][live-link-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+<!-- [![Live Link][live-link-shield]][live-link-url]
+[![LinkedIn][linkedin-shield]][linkedin-url] -->
 
+<p align="center">
+  <a target="_blank" href="https://wouldreadz.herokuapp.com/">
+    <img src="public/images/WouldReadsIMG.jpg" alt="WR" height="180">
+  </a>
+</p>
 
 
 
