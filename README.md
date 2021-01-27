@@ -10,10 +10,11 @@
 <br /><br />
 
 # About The Project
-WouldReads is a clone of GoodReads.com with a Netflix style. The JavaScript application uses Pug for the frontend and Express for the backend.
+WouldReads is a clone of GoodReads.com with a Netflix style. A user can login and browse books they have or would like to read. They can also create new bookshelves to add books to.
 
 
-
+## Built With
+We developed this full-stack application using a JavaScript / Pug frontend and a Node.js / Express backend.
 
 
 
