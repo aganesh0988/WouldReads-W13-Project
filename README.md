@@ -27,6 +27,9 @@ We developed this full-stack application using a JavaScript / Pug frontend and a
 
 
 
+Deployed with:
+* [<img alt="Heroku icon" src="https://img.icons8.com/color/452/heroku.png" align="left" height="20">](https://www.heroku.com/) [Heroku](https://www.heroku.com/)
+
 
 
 [live-link-shield]: https://img.shields.io/badge/-LiveLink-red?style=for-the-badge&logo=red
