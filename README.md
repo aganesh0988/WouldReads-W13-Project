@@ -36,7 +36,7 @@ Deployed with:
 <br /><br />
 
 
-![Homepage for WR.](https://i.gyazo.com/3b7585ba65a6126fa1113bc6b717bfc2.png)
+![WR](https://andreagjackson.com/images/wr2.png)
 
 
 
