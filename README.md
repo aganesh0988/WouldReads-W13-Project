@@ -4,13 +4,15 @@
 [![LinkedIn][linkedin-shieldd]][linkedin-urld]
 [![LinkedIndd][linkedin-shielddd]][linkedin-urldd]
 
+<br /><br />
+
 <p align="center">
   <a target="_blank" href="https://wouldreadz.herokuapp.com/">
-    <img src="https://andreagjackson.com/images/wr1.png" alt="WR" height="240">
+    <img src="https://i.gyazo.com/c49b719fd624b59fd08631284a3d90de.png" alt="WR" height="240">
   </a>
 </p>
 
-<br /><br />
+<br /><br /><br />
 
 # About The Project
 WouldReads is a clone of GoodReads.com with a Netflix style. A user can login and browse books they have or would like to read. They can also create new bookshelves to add books to.
