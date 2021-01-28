@@ -60,5 +60,5 @@ Deployed with:
 [linkedin-shieldd]: https://img.shields.io/badge/-Daniel-red.svg?style=for-the-badge&logo=linkedin&colorB=red
 [linkedin-urld]: https://www.linkedin.com/in/daniel-ford-29970a5a/
 
-[linkedin-shielddd]: https://img.shields.io/badge/-Daniel-red.svg?style=for-the-badge&logo=linkedin&colorB=red
+[linkedin-shielddd]: https://img.shields.io/badge/-Darius-red.svg?style=for-the-badge&logo=linkedin&colorB=red
 [linkedin-urldd]: https://www.linkedin.com/in/darius-freeman-a7b819b4/
