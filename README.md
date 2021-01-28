@@ -54,7 +54,7 @@ Deployed with:
 [linkedin-url]: https://www.linkedin.com/in/andrea-jackson1/
 
 [linkedin-shieldat]: https://img.shields.io/badge/-Andrew-red.svg?style=for-the-badge&logo=linkedin&colorB=red
-[linkedin-urlat]:
+[linkedin-urlat]:https://www.linkedin.com/in/andrew-travers-8273761bb/
 
 [linkedin-shieldd]: https://img.shields.io/badge/-Daniel-red.svg?style=for-the-badge&logo=linkedin&colorB=red
 [linkedin-urld]: https://www.linkedin.com/in/daniel-ford-29970a5a/
