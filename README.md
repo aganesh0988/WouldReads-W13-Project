@@ -3,7 +3,7 @@
 
 <p align="center">
   <a target="_blank" href="https://wouldreadz.herokuapp.com/">
-    <img src="https://andreagjackson.com/images/wr1.png" alt="WR" height="180">
+    <img src="https://andreagjackson.com/images/wr1.png" alt="WR" height="240">
   </a>
 </p>
 
