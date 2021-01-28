@@ -1,5 +1,7 @@
 [![Live Link][live-link-shield]][live-link-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+[![LinkedIn][linkedin-shieldat]][linkedin-urlat]
+[![LinkedIn][linkedin-shieldd]][linkedin-urlat]
 
 <p align="center">
   <a target="_blank" href="https://wouldreadz.herokuapp.com/">
@@ -50,6 +52,9 @@ Deployed with:
 
 [linkedin-shield]: https://img.shields.io/badge/-Andrea-red.svg?style=for-the-badge&logo=linkedin&colorB=red
 [linkedin-url]: https://www.linkedin.com/in/andrea-jackson1/
+
+[linkedin-shieldat]: https://img.shields.io/badge/-Andrew-red.svg?style=for-the-badge&logo=linkedin&colorB=red
+[linkedin-urlat]:
 
 [linkedin-shieldd]: https://img.shields.io/badge/-Daniel-red.svg?style=for-the-badge&logo=linkedin&colorB=red
 [linkedin-urld]: https://www.linkedin.com/in/daniel-ford-29970a5a/
