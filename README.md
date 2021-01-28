@@ -1,7 +1,8 @@
 [![Live Link][live-link-shield]][live-link-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![LinkedIn][linkedin-shieldat]][linkedin-urlat]
-[![LinkedIn][linkedin-shieldd]][linkedin-urlat]
+[![LinkedIn][linkedin-shieldd]][linkedin-urld]
+[![LinkedIndd][linkedin-shielddd]][linkedin-urldd]
 
 <p align="center">
   <a target="_blank" href="https://wouldreadz.herokuapp.com/">
@@ -58,3 +59,6 @@ Deployed with:
 
 [linkedin-shieldd]: https://img.shields.io/badge/-Daniel-red.svg?style=for-the-badge&logo=linkedin&colorB=red
 [linkedin-urld]: https://www.linkedin.com/in/daniel-ford-29970a5a/
+
+[linkedin-shielddd]: https://img.shields.io/badge/-Daniel-red.svg?style=for-the-badge&logo=linkedin&colorB=red
+[linkedin-urldd]: https://www.linkedin.com/in/darius-freeman-a7b819b4/
