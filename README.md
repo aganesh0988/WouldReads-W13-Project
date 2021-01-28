@@ -50,3 +50,6 @@ Deployed with:
 
 [linkedin-shield]: https://img.shields.io/badge/-Andrea-red.svg?style=for-the-badge&logo=linkedin&colorB=red
 [linkedin-url]: https://www.linkedin.com/in/andrea-jackson1/
+
+[linkedin-shieldd]: https://img.shields.io/badge/-Daniel-red.svg?style=for-the-badge&logo=linkedin&colorB=red
+[linkedin-urld]: https://www.linkedin.com/in/daniel-ford-29970a5a/
