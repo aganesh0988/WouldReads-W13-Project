@@ -96,6 +96,67 @@ Future Features
 
 
 
+Tables
+------
+https://app.quickdatabasediagrams.com/#/d/UDzJ5J
+
+1. Books
+    cover
+    title
+    author table reference
+    rating
+    date published
+    summary
+    genre table reference
+
+2. Genre
+    genrename
+
+3. Authors
+    born
+    died
+    books written
+    biography
+    genres
+    websites?
+    influences?
+
+4. Bookshelves
+    shelf-name
+    3 default (want to read, reading, read)
+    users
+        username
+        password?
+        friends?
+
+5. users/books (Joins Table)
+    user reference
+    book reference
+    book shelf reference
+    dateRead
+    dateAdded
+    status
+
+6. author_books
+        authorId
+        bookId
+
+7. Reviews
+    review (optional)
+    rating (not nullable)
+    user reference
+    book reference
+
+8. Qoutes (stretch)
+      quote
+      author reference
+      book reference
+
+9.  Bookshelves
+        shelf-name
+        3 default (want to read, reading, read)
+
+
 
 [live-link-shield]: https://img.shields.io/badge/-LiveLink-red?style=for-the-badge&logo=red
 [live-link-url]: https://wouldreadz.herokuapp.com/
