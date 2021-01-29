@@ -48,6 +48,53 @@ Deployed with:
 ![WR2](https://andreagjackson.com/images/wr3.png)
 
 
+<br /><br />
+
+
+# Features
+    Login/Logout
+    Create User
+    Books
+    Bookshelves
+    Reviews
+    Read Status (will read, have read, etc.)
+
+# Features - MVP
+--------------
+[ ] Homepage that has log-in form/ sign-up form / displays books
+[x] Sign up form where users submit their first name, last name, username, password.
+[x] Log-in form where users provide their email and password to log into the site.
+[ ] A container on homepage to view a database of all available books displayed as covers (netflix style). Each cover is clickable for more info.
+[ ] Nav bar that shows up after log-in that includes logo, myBooks (display user's bookshelves in books format), sign-out button
+[ ] A Page for info about individual book that displays cover, title, author, avg rating, summary, genres
+[ ] A user homepage that displays books by cover.
+    [ ] On Hover shows the following info
+        [ ] cover - displays photo of cover
+        [ ] title - displays title
+        [ ] author - display as link to click for author info
+        [ ] avg rating - displays average rating of given book
+        [ ] rating (user rating) - if there is a rating displays # otherwise lets user click to write review
+        [ ] shelves - lists shelves the book is on
+        [ ] read status - displays read status and allows user to change it
+        [ ] date read - display date user read and allows user to change date
+[x] A form to create bookShelves
+[x] Seeder Files
+
+Future Features
+-------------------
+[ ] A page to view books on specific bookshelf
+[ ] allow user to click cover or title for more info on book
+[ ] toggle between cover & detailed view for books
+[ ] Create a book
+[ ] Edit a book
+[ ] OAuth to sign-in
+[ ] Quotes
+[ ] Search across multiple models
+[ ] A page for info about an author that displays author name, author portraits, born, intro/summary, books written
+[ ] allows users to add shelves without reloading the page via AJAX
+[ ] allow user to add multiple bookshelves
+
+
 
 
 [live-link-shield]: https://img.shields.io/badge/-LiveLink-red?style=for-the-badge&logo=red
